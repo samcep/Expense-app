@@ -21,7 +21,7 @@ namespace Expense_Tracker.Commands
             expenseAddCommand.AddOption(addDescriptionOption);
             RootCommand.Add(expenseAddCommand);
             Command expeseDeleteCommand = new Command("delete", "Delete a specific expense");
-            var deleteExpenseOption = new Option<int>("--id", "Expense's Id") { IsRequired = true };
+            var deleteExpenseOption = new Option<string>("--id", "Expense's Id") { IsRequired = true };
             expeseDeleteCommand.AddOption(deleteExpenseOption);
             RootCommand.Add(expeseDeleteCommand);
             Command expeseListsCommand = new Command("list", "Lists all the expenses");
@@ -49,17 +49,16 @@ namespace Expense_Tracker.Commands
                 {
                     Console.WriteLine($"\n{expense.Id}   {expense.Description}   {expense.Amount}");
                 }
-                Console.WriteLine("Listing expenses....");
             });
 
             expeseSummaryCommand.SetHandler((month) =>
             {
-                Console.WriteLine("Summaring by month..." + month);
+                ExpenseManager.GetSummary(month);
             } , summaryByMonthOption);
 
             expeseDeleteCommand.SetHandler((id) =>
             {
-                Console.WriteLine("Deleting the expense with id." + id);
+                ExpenseManager.Delete(id);
             }, deleteExpenseOption);
             return RootCommand;
         }
