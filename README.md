@@ -12,8 +12,7 @@ A simple command-line application to manage your personal finances. This applica
 - View all recorded expenses.
 - View a summary of all expenses.
 - View a summary of expenses for a specific month (current year).
-## Installation
-To install and run the Expense Tracker CLI, follow these steps:
+
 
 
 ## Usage
