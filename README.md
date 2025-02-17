@@ -15,17 +15,6 @@ A simple command-line application to manage your personal finances. This applica
 ## Installation
 To install and run the Expense Tracker CLI, follow these steps:
 
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/yourusername/expense-tracker-cli.git
-   cd expense-tracker-cli
-   ```
-
-2. Build and run the application:
-   ```sh
-   dotnet build
-   dotnet run
-   ```
 
 ## Usage
 ### Add an Expense
